@@ -1,0 +1,44 @@
+on fs
+<<<<<<< HEAD
+#sunwave
+    chown system system /dev/sunwave_tee
+#mircoarray
+    chmod 666 /dev/madev0
+    chown system system /dev/madev0
+#blestech
+    chmod 0666 /dev/bl229x
+    chmod 0666 /dev/blfp
+#goodix
+chown system system /dev/goodix_fp
+on post-fs-data
+#mircoarray
+    mkdir /data/system/ma_fingerprint 0700 system system
+on boot
+#goodix
+service goodixfpd /system/bin/goodixfingerprintd
+    class late_start
+    user system
+    group media_rw system
+#fingerprint
+=======
+    chown system system /dev/sunwave_tee
+on boot
+>>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group system
+<<<<<<< HEAD
+#sunwave
+service fpserver /system/bin/fpserver
+    class late_start
+    user root
+    disabled
+on property:sys.fingerprint.chip=sunwave
+    start fpserver
+=======
+service fpserver /system/bin/fpserver
+    class late_start
+    user root
+>>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
+
