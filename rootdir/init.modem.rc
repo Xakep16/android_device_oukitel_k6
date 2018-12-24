@@ -15,10 +15,6 @@ on early-init
     setprop net.perf.rps.default ff
     setprop net.perf.tether.cpu.core 4,4,0,0
     setprop net.perf.tether.cpu.freq 1183000,1638000,0,0
-<<<<<<< HEAD
-    setprop net.perf.internal.rps 0f
-=======
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
     setprop net.perf.internal.cpu.core 4,4,0,0
     setprop net.perf.internal.cpu.freq -1,-1,-1,-1
 
@@ -43,19 +39,8 @@ on post-fs-data
     restorecon_recursive /protect_f
     restorecon_recursive /protect_s
 # Encrypt phone function
-<<<<<<< HEAD
-    # ignore permission check
-    write /data/ccci_cfg/md_new_ver.1 "flag"
-    chmod 0660 /data/ccci_cfg/md_new_ver.1
     setprop vold.post_fs_data_done 1
 
- # Clear the sim switch flag
-    setprop persist.radio.simswitch ""
-
-=======
-    setprop vold.post_fs_data_done 1
-
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 service gsm0710muxd /vendor/bin/gsm0710muxd -s /dev/ttyC0 -f 512 -n 8 -m basic
     class core
     user root
@@ -77,74 +62,12 @@ service muxreport-daemon /vendor/bin/muxreport
     disabled
     oneshot
 
-<<<<<<< HEAD
-service ril-daemon-mtk /vendor/bin/mtkrild
-    class core
-    socket rild stream 660 root radio
-    socket rild2 stream 660 root radio
-    socket rild3 stream 660 root radio
-    socket rild4 stream 660 root radio
-    socket rild-ims stream 660 root radio
-    socket rild-debug stream 660 radio system
-    socket rild-oem stream 660 radio system
-    socket rild-mtk-ut stream 660 radio net_bt
-    socket rild-mtk-ut-2 stream 660 radio net_bt
-    socket rild-mtk-modem stream 660 radio system
-    socket rild-atci stream 660 root radio
-    socket rild-mal stream 660 radio system
-    socket rild-mal-at stream 660 radio system
-    socket rild-vsim stream 660 root radio
-    socket rild-mbim stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
-    socket sap_uim_socket2 stream 660 bluetooth bluetooth
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log system
-    disabled
-    oneshot
-
-service ril-daemon-mtkmd2 /vendor/bin/mtkrildmd2
-    class core
-    socket rild-md2 stream 660 root radio
-    socket rild2-md2 stream 660 root radio
-    socket rild-debug-md2 stream 660 radio system
-    socket rild-oem-md2 stream 660 radio system
-    socket rild-mtk-ut-md2 stream 660 radio net_bt
-    socket rild-mtk-ut-2-md2 stream 660 radio net_bt
-    socket rild-mtk-modem-md2 stream 660 radio system
-    socket rild-atci-md2 stream 660 root radio
-    socket rild-vsim-md2 stream 660 root radio
-    socket rild-mal-md2 stream 660 radio system
-    socket rild-vsim-md2 stream 660 root radio
-    socket rild-mbim-md2 stream 660 root radio
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log system
-    disabled
-    oneshot
-
-=======
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 service md_minilog_util /vendor/bin/md_minilog_util
     user radio
     disabled
     oneshot
 
 #VIA RILD service
-<<<<<<< HEAD
-service viarild /vendor/bin/viarild -l /vendor/lib/libviatelecom-withuim-ril.so -- -d /dev/ttySDIO4
-    class core
-    socket rild-via stream 660 radio radio
-    socket msap_c2k_socket1 stream 660 radio radio
-    socket msap_c2k_socket2 stream 660 radio radio
-    socket msap_c2k_socket3 stream 660 radio radio
-    socket msap_c2k_socket4 stream 660 radio radio
-    socket rpc stream 660 radio system
-    socket rildc-debug stream 660 radio system
-    socket rild-ctclient stream 660 radio system
-    socket rild-atci-c2k stream 660 radio system
-    group radio cache inet misc audio sdcard_r sdcard_rw log system
-    disabled
-    oneshot
-=======
 #service viarild /vendor/bin/viarild -l /vendor/lib/libviatelecom-withuim-ril.so -- -d /dev/ttySDIO4
 #    class core
 #    socket rild-via stream 660 radio radio
@@ -159,26 +82,16 @@ service viarild /vendor/bin/viarild -l /vendor/lib/libviatelecom-withuim-ril.so 
 #    group radio cache inet misc audio sdcard_r sdcard_rw log system
 #    disabled
 #    oneshot
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 
 #
 #  Modem related services (Begin)
 #
 
-<<<<<<< HEAD
-#
-#service permission_check /vendor/bin/permission_check
-#    class main
-#    user root
-#    group system radio
-#    oneshot
-=======
 service permission_check /vendor/bin/permission_check
     class main
     user root
     group system radio
     oneshot
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 
 service ccci_fsd /vendor/bin/ccci_fsd 0
     user radio
@@ -240,8 +153,4 @@ service terservice /vendor/bin/terservice
 on property:ril.muxreport=1
     start muxreport-daemon
 
-<<<<<<< HEAD
-    setprop persist.mtk_ims_support 0
-    setprop persist.mtk_epdg_support 0
-=======
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
+

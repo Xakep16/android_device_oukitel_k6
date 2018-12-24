@@ -26,11 +26,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
-<<<<<<< HEAD
 LOCAL_MODULE := microarray.fingerprint.default
-=======
-LOCAL_MODULE := fingerprint.mt6763
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

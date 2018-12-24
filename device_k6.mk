@@ -19,15 +19,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
-<<<<<<< HEAD
-    ro.kernel.android.checkjni=0 \
-    ro.allow.mock.location=1 \
-    ro.telephony.ril_class=MediaTekRIL \
-    ro.telephony.ril.config=fakeiccid
-=======
     ro.allow.mock.location=1 \
     ro.telephony.ril_class=MediaTekRIL \
     ro.telephony.ril.config=fakeiccid \
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
     persist.service.acm.enable=0 \
-    ro.mount.fs=EXT4
+ro.mount.fs=EXT4

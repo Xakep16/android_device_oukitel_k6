@@ -25,10 +25,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
 WPA_SUPPLICANT_VERSION 			:= VER_0_8_X
 BOARD_HOSTAPD_DRIVER 			:= NL80211
 BOARD_HOSTAPD_PRIVATE_LIB		:= lib_driver_cmd_mt66xx

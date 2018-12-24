@@ -15,7 +15,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/bluetooth/bt_did.conf:system/etc/bluetooth/bt_did.conf \
     $(DEVICE_PATH)/configs/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
     $(DEVICE_PATH)/configs/bluetooth/bt_stack.conf.sqc:system/etc/bluetooth/bt_stack.conf.sqc
-<<<<<<< HEAD
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -46,5 +45,4 @@ PRODUCT_PACKAGES += \
     libstDTA \
     STNFCDta \
 ixitdata.xml
-=======
->>>>>>> a4e4431735de287da3bc955966cdfe3b5dd05a49
+
