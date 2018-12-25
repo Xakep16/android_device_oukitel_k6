@@ -239,4 +239,5 @@ type bl229x_device, dev_type;
 # Vanzo:zhengyulong on: Fri, 14 Oct 2016 16:17:18 +0800
 # add for sunwave_fingerprinter
 type sunwave_device, dev_type;
+type madev0_device, dev_type;
 #endif by zhengyulong

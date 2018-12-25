@@ -163,3 +163,11 @@ allow mediacodec rootfs:lnk_file getattr;
 allow mediacodec thermalloadalgod:unix_stream_socket connectto;
 allow mediacodec mtk_thermal_config_prop:file { getattr open read };
 allow mediacodec mtk_thermal_config_prop:property_service set;
+
+# Date : WK16.34
+# Operation : Migration
+# Purpose : Play tone for alert
+allow mediacodec custom_file:dir search;
+
+
+

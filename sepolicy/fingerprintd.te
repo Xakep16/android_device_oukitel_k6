@@ -11,3 +11,5 @@ allow fingerprintd sunwave_device:chr_file { open read write ioctl };
 
 allow fingerprintd self:netlink_kobject_uevent_socket { create setopt bind read };
 
+allow fingerprintd madev0_device:chr_file rw_file_perms;
+allow fingerprintd self:capability { dac_override dac_read_search };
